@@ -1,0 +1,126 @@
+/* footer */
+.footer {
+	padding: 80px 0;
+	color: var(--secondary-text-color);
+	background: var(--fifth-background-color);
+	&__top-col {
+		margin: 0 0 40px;
+		padding: 0 0 40px;
+		border-bottom: 1px solid var(--secondary-border-color);
+		}
+	&__main-nav {
+		ul {
+			display: flex;
+			justify-content: space-between;
+			align-items: color;
+			gap: 0 15px;
+			}
+		li {
+			font-size: 28px;
+			font-family: var(--secondary-font-family);
+			font-weight: var(--quaternary-font-weight);
+			line-height: 30px;
+			}
+		a {
+			color: var(--secondary-text-color);
+			&:hover {
+				color: var(--quaternary-text-color);
+				}
+			}
+		}
+	&__middle-col {
+		margin: 0 0 40px;
+		}
+	&__col {
+		display: grid;
+		grid-template-columns: 280px 330px 330px 180px;
+		gap: 40px 20px;
+		}
+	&__logo {
+		margin: 0 0 40px;
+		width: 100px;
+		img {
+			width: 100%;
+			}
+		}
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 16px 0;
+		margin: 0 0 40px;
+		}
+	&__phone {
+		display: block;
+		font-size: 24px;
+		font-weight: var(--quaternary-font-weight);
+		line-height: 32px;
+		a {
+			color: var(--secondary-text-color);
+			&:hover {
+				color: var(--fifth-text-color);
+				}
+			}
+		}
+	&__mail {
+		display: block;
+		font-size: 20px;
+		font-weight: var(--quaternary-font-weight);
+		line-height: 27px;
+		a {
+			color: var(--secondary-text-color);
+			&:hover {
+				color: var(--fifth-text-color);
+				}
+			}
+		}
+	&__title {
+		margin: 0 0 15px;
+		color: var(--secondary-text-color);
+		font-size: 28px;
+		font-family: var(--secondary-font-family);
+		font-weight: var(--tertiary-font-weight);
+		line-height: 30px;
+		}
+	&__nav {
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 16px 0;
+			}
+		li {
+			font-size: 16px;
+			line-height: 22px;
+			}
+		a {
+			color: var(--fifth-text-color);
+			&:hover {
+				color: var(--secondary-text-color);
+				}
+			}
+		}
+	&__bottom-col {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0 30px;
+		padding: 32px 0 0;
+		border-top: 1px solid var(--secondary-border-color);
+		}
+	&__copy {
+		display: block;
+		color: var(--tertiary-text-color);
+		font-size: 15px;
+		line-height: 20px;
+		}
+	&__link {
+		display: block;
+		font-size: 15px;
+		line-height: 20px;
+		a {
+			color: var(--tertiary-text-color);
+			&:hover {
+				color: var(--secondary-text-color);
+				}
+			}
+		}
+	}

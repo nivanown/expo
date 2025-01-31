@@ -1,0 +1,13 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'Horta';
+  src: local('Horta Semi Bold'), local('Horta-Semi-Bold'),
+      url('../fonts/Horta-Semi-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Horta-Semi-Bold.woff2') format('woff2'),
+      url('../fonts/Horta-Semi-Bold.woff') format('woff'),
+      url('../fonts/Horta-Semi-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  }
