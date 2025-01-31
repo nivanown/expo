@@ -2980,6 +2980,10 @@ textarea::-webkit-input-placeholder {
   .search-form {
     width: 432px;
   }
+  /* search-result */
+  .search-result {
+    padding: 0 100px;
+  }
   /* menu-btn */
   .menu-btn {
     display: block;
@@ -3183,6 +3187,10 @@ textarea::-webkit-input-placeholder {
   /* search-form */
   .search-form {
     width: 260px;
+  }
+  /* search-result */
+  .search-result {
+    padding: 0;
   }
   /* main-nav */
   .main-nav {
