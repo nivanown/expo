@@ -40,8 +40,8 @@
 		left: 0;
 		}
 	&__dropdown {
-		position: fixed;
-		padding: 95px 20px;
+		margin: 0;
+		padding: 95px 0;
 		width: 100%;
 		height: 100%;
 		top: 0;
@@ -58,6 +58,14 @@
 			top: 15px;
 			right: 20px;
 			}
+		}
+	&__container {
+		padding: 0 20px;
+		height: auto;
+		}
+	&__content {
+		height: auto;
+		overflow: visible;
 		}
 	}
 

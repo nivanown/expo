@@ -235,10 +235,11 @@
 		line-height: 26px;
 		}
 	&__dropdown {
-		position: absolute;
-		padding: 40px 0 64px;
+		position: fixed;
+		margin: 141px 0 120px;
 		width: 100%;
-		top: 82px;
+		height: calc(100% - 141px - 120px);
+		top: 0;
 		left: 0;
 		background: var(--tertiary-background-color);
 		opacity: 0;
@@ -270,10 +271,19 @@
 			content: "";
 			}
 		}
+	&__container {
+		padding: 40px 20px 64px;
+		height: 100%;
+		}
+	&__content {
+		height: 100%;
+		overflow-y: auto;
+		}
 	}
 
 /* catalog-tabs */
 .catalog-tabs {
+	overflow: hidden;
 	&__top-col {
 		display: flex;
 		justify-content: space-between;
