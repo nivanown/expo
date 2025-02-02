@@ -79,15 +79,22 @@ if (catalogBtn && catalogDropdown && catalogBlock && catalogOverlay) {
         catalogBtn.classList.remove('open');
         catalogDropdown.classList.remove('show');
         catalogOverlay.classList.remove('show');
-        document.body.classList.remove('scroll-none');
+
+        // Удаляем scroll-none только если оба dropdown скрыты
+        if (!catalogDropdown.classList.contains('show') && !document.querySelector('.search-form__dropdown.show')) {
+            document.body.classList.remove('scroll-none');
+        }
     }
 
     // Вешаем обработчик на кнопку
     catalogBtn.addEventListener('click', toggleCatalogMenu);
 
-    // Закрываем меню при клике вне блока
+    // Закрываем меню при клике вне блоков
     document.addEventListener('click', (event) => {
-        if (!catalogBlock.contains(event.target)) {
+        if (
+            !event.target.closest('.catalog') &&
+            !event.target.closest('.catalog__dropdown')
+        ) {
             closeCatalogMenu();
         }
     });
@@ -123,18 +130,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.querySelector(".search-form__input");
     const searchDropdown = document.querySelector(".search-form__dropdown");
     const searchOverlay = document.querySelector(".search-form-overlay");
+    const searchForm = document.querySelector(".search-form");
     const searchItems = document.querySelectorAll(".search-result__item");
+    const body = document.body;
 
     searchInput.addEventListener("input", () => {
         const query = searchInput.value.trim().toLowerCase();
 
         // Условие: Показывать результаты только если введено 2 или более символов
         if (query.length < 2) {
-            searchDropdown.classList.remove("show");
-            searchOverlay.classList.remove("show");
-            searchItems.forEach(item => {
-                item.style.display = "none";
-            });
+            removeSearchClasses();
             return;
         }
 
@@ -169,15 +174,36 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.display = itemMatches ? "block" : "none";
         });
 
-        // Управление классами dropdown и overlay
+        // Управление классами dropdown, overlay и body
         if (hasMatches) {
             searchDropdown.classList.add("show");
             searchOverlay.classList.add("show");
+            body.classList.add("scroll-none");
         } else {
-            searchDropdown.classList.remove("show");
-            searchOverlay.classList.remove("show");
+            removeSearchClasses();
         }
     });
+
+    // Удаление классов при клике вне поиска и dropdown
+    document.addEventListener("click", (event) => {
+        if (
+            !event.target.closest(".search-form") &&
+            !event.target.closest(".search-form__dropdown")
+        ) {
+            removeSearchClasses();
+        }
+    });
+
+    function removeSearchClasses() {
+        searchDropdown.classList.remove("show");
+        searchOverlay.classList.remove("show");
+        searchItems.forEach(item => (item.style.display = "none"));
+
+        // Удаляем scroll-none только если оба dropdown скрыты
+        if (!searchDropdown.classList.contains('show') && !document.querySelector('.catalog__dropdown.show')) {
+            body.classList.remove("scroll-none");
+        }
+    }
 });
 
 /*- partners-slider -*/
@@ -399,13 +425,13 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBtn.addEventListener("click", function () {
         mobileMenu.classList.add("open");
         overlay.classList.add("show");
-        body.classList.add("scroll-none");
+        body.classList.add("m-scroll-none");
     });
 
     function closeMenu() {
         mobileMenu.classList.remove("open");
         overlay.classList.remove("show");
-        body.classList.remove("scroll-none");
+        body.classList.remove("m-scroll-none");
     }
 
     closeBtn.addEventListener("click", closeMenu);
