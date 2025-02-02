@@ -71,6 +71,7 @@ if (catalogBtn && catalogDropdown && catalogBlock && catalogOverlay) {
         const isOpen = catalogBtn.classList.toggle('open');
         catalogDropdown.classList.toggle('show', isOpen);
         catalogOverlay.classList.toggle('show', isOpen);
+        document.body.classList.toggle('scroll-none', isOpen);
     }
 
     // Функция для закрытия меню
@@ -78,6 +79,7 @@ if (catalogBtn && catalogDropdown && catalogBlock && catalogOverlay) {
         catalogBtn.classList.remove('open');
         catalogDropdown.classList.remove('show');
         catalogOverlay.classList.remove('show');
+        document.body.classList.remove('scroll-none');
     }
 
     // Вешаем обработчик на кнопку
