@@ -976,10 +976,11 @@ textarea::-webkit-input-placeholder {
   line-height: 26px;
 }
 .catalog__dropdown {
-  position: absolute;
-  padding: 40px 0 64px;
+  position: fixed;
+  margin: 141px 0 120px;
   width: 100%;
-  top: 82px;
+  height: calc(100% - 141px - 120px);
+  top: 0;
   left: 0;
   background: var(--tertiary-background-color);
   opacity: 0;
@@ -1011,8 +1012,19 @@ textarea::-webkit-input-placeholder {
   background: var(--tertiary-background-color);
   content: "";
 }
+.catalog__container {
+  padding: 40px 20px 64px;
+  height: 100%;
+}
+.catalog__content {
+  height: 100%;
+  overflow-y: auto;
+}
 
 /* catalog-tabs */
+.catalog-tabs {
+  overflow: hidden;
+}
 .catalog-tabs__top-col {
   display: flex;
   justify-content: space-between;
@@ -2927,8 +2939,8 @@ textarea::-webkit-input-placeholder {
     left: 0;
   }
   .catalog__dropdown {
-    position: fixed;
-    padding: 95px 20px;
+    margin: 0;
+    padding: 95px 0;
     width: 100%;
     height: 100%;
     top: 0;
@@ -2945,6 +2957,14 @@ textarea::-webkit-input-placeholder {
     position: absolute;
     top: 15px;
     right: 20px;
+  }
+  .catalog__container {
+    padding: 0 20px;
+    height: auto;
+  }
+  .catalog__content {
+    height: auto;
+    overflow: visible;
   }
   /* close-btn */
   .close-btn {
