@@ -6,24 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const daysContainer = document.querySelector(".calendar__days");
     const eventsList = document.querySelectorAll(".events-list");
 
-    // Проверяем, есть ли все основные элементы календаря на странице
     if (!prevArrow || !nextArrow || !monthDisplay || !daysContainer || !eventsList.length) {
         console.warn("Не удалось найти некоторые элементы календаря. Проверьте структуру HTML.");
-        return; // Завершаем выполнение, если какой-то элемент отсутствует
+        return;
     }
 
-    let currentDate = new Date(2025, 0); // Начинаем с января 2025
+    let currentDate = new Date(2025, 0);
     const today = new Date();
     const initialMonth = today.getMonth();
     const initialYear = today.getFullYear();
     let selectedDates = new Map();
 
+    // Атрибут data-date в формате "YYYY-MM-DD"
     eventsList.forEach(event => {
-        const eventDate = event.getAttribute("data");
-        if (eventDate) {
-            const [day, month, year] = eventDate.split("/").map(num => parseInt(num, 10));
-            const formattedDate = `${year}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
-            selectedDates.set(formattedDate, event);
+        const eventDate = event.getAttribute("data-date");
+        if (eventDate && /^\d{4}-\d{2}-\d{2}$/.test(eventDate)) {
+            selectedDates.set(eventDate, event);
         }
     });
 
@@ -36,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const firstDay = new Date(year, month, 1).getDay();
         const lastDate = new Date(year, month + 1, 0).getDate();
         const prevLastDate = new Date(year, month, 0).getDate();
-        const nextDays = 42 - (firstDay + lastDate); // 6 недель на сетку
+        const nextDays = 42 - (firstDay + lastDate);
 
         for (let i = firstDay - 1; i >= 0; i--) {
             const day = document.createElement("span");
@@ -57,12 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 day.dataset.date = dateStr;
             }
 
-            // Проверка на прошедшую дату
             if (year < today.getFullYear() || 
                 (year === today.getFullYear() && month < today.getMonth()) ||
                 (year === today.getFullYear() && month === today.getMonth() && i < today.getDate())) {
                 day.classList.add("disabled");
-                day.classList.remove("selected"); // Убираем `selected` у прошедших дней
+                day.classList.remove("selected");
             }
 
             daysContainer.appendChild(day);
@@ -75,14 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
             daysContainer.appendChild(day);
         }
 
-        // Блокируем кнопку "назад", если текущий месяц меньше или равен сегодняшнему
         prevArrow.classList.toggle("disabled", year < today.getFullYear() || (year === today.getFullYear() && month <= today.getMonth()));
-
         monthDisplay.classList.toggle("text-center", year > initialYear || (year === initialYear && month > initialMonth));
 
         addDayClickHandlers();
 
-        // **Исправленный авто-переход**
         if (year < today.getFullYear() || (year === today.getFullYear() && month < today.getMonth())) {
             setTimeout(() => {
                 currentDate.setMonth(today.getMonth());
@@ -109,14 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (day.classList.contains("active")) {
                     day.classList.remove("active");
                     eventElement.classList.remove("show");
-                    calendarWidget.classList.remove("open"); // Удаляем `open`, если повторный клик
+                    calendarWidget.classList.remove("open");
                 } else {
                     document.querySelectorAll(".calendar__day.active").forEach(activeDay => activeDay.classList.remove("active"));
                     document.querySelectorAll(".events-list.show").forEach(event => event.classList.remove("show"));
 
                     day.classList.add("active");
                     eventElement.classList.add("show");
-                    calendarWidget.classList.add("open"); // Добавляем `open`
+                    calendarWidget.classList.add("open");
                 }
             });
         });
