@@ -540,11 +540,11 @@
 			}
 		}
 	&__dropdown {
-		position: absolute;
-		padding: 30px 0 64px;
-		width: 100%;
-		min-height: 680px;
-		top: 82px;
+		position: fixed;
+		margin: 141px 0 120px;
+	  width: 100%;
+	  height: calc(100% - 141px - 120px);
+		top: 0;
 		left: 0;
 		background: var(--tertiary-background-color);
 		opacity: 0;
@@ -575,6 +575,14 @@
 			background: var(--tertiary-background-color);
 			content: "";
 			}
+		}
+	&__container {
+		padding: 30px 20px 64px;
+		height: 100%;
+		}
+	&__content {
+		height: 100%;
+  	overflow-y: auto;
 		}
 	}
 
