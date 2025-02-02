@@ -756,6 +756,13 @@ textarea::-webkit-input-placeholder {
   transition: 0.3s fill;
 }
 
+/* no-data-text */
+.no-data-text {
+  display: block;
+  font-size: 18px;
+  line-height: 27px;
+}
+
 /* header */
 .header {
   position: absolute;
