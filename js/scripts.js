@@ -471,3 +471,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+/*- modal -*/
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-modal]").forEach(trigger => {
+        trigger.addEventListener("click", (e) => {
+
+            if (trigger.tagName.toLowerCase() === "a") {
+                e.preventDefault();
+            }
+
+            const modalId = trigger.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+
+            if (modal) {
+                document.body.classList.add("modal-scroll-none");
+                modal.classList.add("show");
+            }
+        });
+    });
+
+    document.querySelectorAll(".modal").forEach(modal => {
+        modal.addEventListener("click", (e) => {
+            const modalIn = modal.querySelector(".modal__in");
+
+            if (
+                e.target.classList.contains("modal__close-btn") || 
+                e.target.classList.contains("modal__overlay") || 
+                (modalIn && !modalIn.contains(e.target))
+            ) {
+                modal.classList.remove("show");
+                document.body.classList.remove("modal-scroll-none");
+            }
+        });
+    });
+});
