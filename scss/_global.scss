@@ -39,11 +39,11 @@ p {
 
 /* a */
 a {
-  color: var(--tertiary-text-color);
+  color: var(--quaternary-text-color);
   text-decoration: none;
   transition: color .5s linear;
   &:hover {
-    color: var(--eight-text-color);
+    color: var(--primary-text-color);
     }
   }
 
@@ -278,6 +278,15 @@ textarea::-webkit-input-placeholder {
   border: 1px solid var(--fifth-text-color);
   background: var(--tertiary-background-color);
   transition: .5s border-color;
+  &_border-black {
+    border-color: var(--primary-border-color);
+    box-shadow: 0 0 0 2px var(--primary-border-color) inset;
+    .select__dropdown {
+      top: 40px;
+      border-color: var(--primary-border-color);
+      box-shadow: 0 0 0 2px var(--primary-border-color) inset;
+      }
+    }
   &.open {
     border-color: var(--primary-border-color);
     }
@@ -654,4 +663,9 @@ textarea::-webkit-input-placeholder {
   font-family: var(--secondary-font-family);
   font-weight: var(--tertiary-font-weight);
   line-height: 40px;
+  }
+
+/* btn-panel */
+.btn-panel {
+  padding: 20px 0 0;
   }
