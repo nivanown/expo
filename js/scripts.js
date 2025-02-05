@@ -472,6 +472,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+/*- share -*/
+document.addEventListener("DOMContentLoaded", () => {
+    const icon = document.querySelector(".share__icon");
+    const dropdown = document.querySelector(".share__dropdown");
+
+    if (icon && dropdown) {
+
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            dropdown.classList.toggle("show");
+            icon.classList.toggle("active");
+        }
+
+        function closeDropdown(event) {
+            if (!dropdown.contains(event.target) && !icon.contains(event.target)) {
+                dropdown.classList.remove("show");
+                icon.classList.remove("active");
+            }
+        }
+
+        icon.addEventListener("click", toggleDropdown);
+        document.addEventListener("click", closeDropdown);
+    }
+});
+
 /*- modal -*/
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-modal]").forEach(trigger => {
