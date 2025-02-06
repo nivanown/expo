@@ -497,6 +497,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+/*- dates -*/
+document.addEventListener("DOMContentLoaded", function () {
+    const datesWidget = document.getElementById("dates");
+    if (!datesWidget) return;
+
+    const listItems = datesWidget.querySelectorAll(".filters-widget__list li");
+    const showMoreBtn = datesWidget.querySelector(".filters-widget__link-show");
+    const hideBtn = datesWidget.querySelector(".filters-widget__link-hidden");
+
+    listItems.forEach((li, index) => {
+        if (index >= 5) {
+            li.classList.add("hidden");
+        }
+    });
+
+    showMoreBtn.addEventListener("click", function () {
+        listItems.forEach(li => li.classList.remove("hidden"));
+        showMoreBtn.classList.add("hidden");
+        hideBtn.classList.add("show");
+    });
+
+    hideBtn.addEventListener("click", function () {
+        listItems.forEach((li, index) => {
+            if (index >= 5) {
+                li.classList.add("hidden");
+            }
+        });
+        showMoreBtn.classList.remove("hidden");
+        hideBtn.classList.remove("show");
+    });
+});
+
 /*- modal -*/
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-modal]").forEach(trigger => {
