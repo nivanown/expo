@@ -1242,7 +1242,10 @@
 
 /* filters-col */
 .filters-col {
+	display: flex;
+	flex-direction: column;
 	flex-shrink: 0;
+	gap: 20px 0;
 	width: 280px;
 	}
 
@@ -1265,9 +1268,12 @@
 		li {
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
+			align-items: flex-start;
 			gap: 0 8px;
 			padding: 2px 0 2px 2px;
+			&.hidden {
+				display: none;
+				}
 			}
 		}
 	&__quantity {
@@ -1340,6 +1346,9 @@
 	align-items: center;
 	gap: 0 34px;
 	padding: 20px 0 0;
+	&_indent-left {
+		padding-left: 100px;
+		}
 	&__prev {
 		font-size: 0;
 		}
@@ -1969,5 +1978,234 @@
 	.select {
 		flex-shrink: 0;
 		width: 280px;
+		}
+	}
+
+/* events-nav */
+.events-nav {
+	margin: 0 0 20px;
+	ul {
+		display: flex;
+		gap: 0 40px;
+		}
+	li {
+		display: flex;
+		align-items: center;
+		gap: 0 10px;
+		font-size: 28px;
+		font-family: var(--secondary-font-family);
+		font-weight: var(--tertiary-font-weight);
+		line-height: 30px;
+		&:after {
+			display: none;
+			width: 75px;
+			height: 3px;
+			background: var(--quaternary-background-color);
+			content: "";
+			}
+		&.active {
+			color: var(--quaternary-text-color);
+			&:after {
+				display: block;
+				}
+			}
+		}
+	a {
+		color: var(--tertiary-text-color);
+		&:hover {
+			color: var(--primary-text-color);
+			}
+		}
+	}
+
+/* calendar-events-list */
+.calendar-events-list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px 0;
+	&__item {
+		display: flex;
+		gap: 0 20px;
+		}
+	&__period {
+		position: relative;
+		flex-shrink: 0;
+		width: 80px;
+		}
+	&__line-left {
+		position: absolute;
+		width: 1px;
+		top: 100px;
+		left: 20px;
+		bottom: 0;
+		background: var(--tertiary-border-color);
+		&:after {
+			position: absolute;
+			display: block;
+			width: 7px;
+			height: 7px;;
+			left: -3px;
+			bottom: 0;
+			border-left: 1px solid var(--tertiary-border-color);
+			border-bottom: 1px solid var(--tertiary-border-color);
+			content: "";
+			transform: rotate(-45deg);
+			}
+		}
+	&__line-right {
+		position: absolute;
+		width: 1px;
+		top: 100px;
+		left: 40px;
+		bottom: 0;
+		background: var(--tertiary-border-color);
+		&:before {
+			position: absolute;
+			display: block;
+			width: 7px;
+			height: 7px;
+			top: 0;
+			left: -3px;
+			border-top: 1px solid var(--tertiary-border-color);
+			border-left: 1px solid var(--tertiary-border-color);
+			content: "";
+			transform: rotate(45deg);
+			}
+		}
+	&__year {
+		display: block;
+		font-size: 40px;
+		font-family: var(--secondary-font-family);
+		font-weight: var(--tertiary-font-weight);
+		line-height: 44px;
+		}
+	&__month {
+		display: block;
+		font-size: 24px;
+		font-family: var(--secondary-font-family);
+		font-weight: var(--tertiary-font-weight);
+		line-height: 26px;
+		}
+	}
+
+/* calendar-events */
+.calendar-events {
+	display: flex;
+	flex-direction: column;
+	gap: 20px 0;
+	&__item {
+		padding: 20px;
+		background: var(--primary-background-color);
+		transition: .2s box-shadow;
+		&:hover {
+			box-shadow: 0 0 0 3px var(--secondary-border-color);
+			}
+		}
+	&__col {
+		display: flex;
+		gap: 0 20px;
+		margin: 0 0 16px;
+		}
+	&__photo {
+		flex-shrink: 0;
+		width: 160px;
+		height: 105px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			transition: .5s transform;
+			}
+		&:hover {
+			img {
+				transform: scale(1.05);
+				}
+			}
+		}
+	&__description {
+		width: 100%;
+		}
+	&__date {
+		display: block;
+		margin: 0 0 6px;
+		color: var(--six-text-color);
+		font-size: 24px;
+		font-family: var(--secondary-font-family);
+		font-weight: var(--tertiary-font-weight);
+		line-height: 26px;
+		}
+	&__location {
+		display: block;
+		margin: 0 0 2px;
+		color: var(--tertiary-text-color);
+		font-size: 15px;
+		line-height: 22px;
+		}
+	&__title {
+		display: -webkit-box;
+		font-size: 19px;
+		font-weight: var(--tertiary-font-weight);
+		line-height: 26px;
+		text-overflow: ellipsis;
+	  -moz-box-orient: vertical;
+	  -webkit-line-clamp: 2;
+	  word-break: break-word;
+	  overflow: hidden;
+		a {
+			color: var(--primary-text-color);
+			&:hover {
+				color: var(--quaternary-text-color);
+				}
+			}
+		}
+	p {
+		margin: 0 0 20px;
+		color: var(--tertiary-text-color);
+		font-size: 15px;
+		line-height: 22px;
+		}
+	&__info-col {
+		display: flex;
+	  align-items: center;
+	  gap: 0px 9px;
+	  margin-top: auto;
+		}
+	&__direction {
+		display: block;
+		flex-shrink: 0;
+		font-size: 15px;
+		line-height: 22px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		a {
+			color: var(--tertiary-text-color);
+			&:hover {
+				color: var(--quaternary-text-color);
+				}
+			}
+		}
+	&__separator {
+		display: block;
+		flex-shrink: 0;
+		width: 1px;
+		height: 13px;
+		background: var(--fifth-text-color);
+		}
+	&__tags {
+		display: block;
+		font-size: 15px;
+		line-height: 22px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		a {
+			color: var(--tertiary-text-color);
+			&:hover {
+				color: var(--quaternary-text-color);
+				}
+			}
 		}
 	}
