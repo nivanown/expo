@@ -14,6 +14,11 @@
   	opacity: 1;
  	 	visibility: visible;
   	}	
+  &_size-small {
+  	.modal__in {
+  		max-width: 780px;
+  		}
+  	}	
   &__content {
   	position: relative;
 	  padding: 150px 20px;
@@ -26,13 +31,23 @@
   	max-width: 1180px;
   	background: var(--tertiary-background-color);
   	}
+  &__top-panel {
+  	display: flex;
+  	align-items: center;
+  	gap: 0 40px;
+  	margin: 0 0 20px;
+  	.small-title {
+  		margin: 0;
+  		flex-grow: 1;
+  		}
+  	}
   &__close-btn {
-  	position: absolute;
+  	position: relative;
   	display: block;
+  	flex-shrink: 0;
   	width: 24px;
   	height: 24px;
-  	top: 54px;
-  	right: 40px;
+  	top: -2px;
   	font-size: 0;
   	background: url(../img/icons/close-btn.svg) center no-repeat;
 		background-size: 18px;
@@ -41,9 +56,6 @@
 		&:hover {
 			opacity: 0.6;
 			}
-  	}
-  .title {
-  	margin-right: 64px;
   	}
 	&__overlay {
 		position: fixed;
@@ -61,5 +73,11 @@
 		&_five-col {
 			padding: 0;
 			}	
+		}
+	&__bottom-col {
+		display: flex;
+		align-items: center;
+		gap: 0 20px;
+		padding: 20px 0;
 		}
 	}
