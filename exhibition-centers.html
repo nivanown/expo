@@ -1077,7 +1077,7 @@
                         </div>
                     </div>
                     <div class="header__user-col">
-                        <a href="#" class="btn">Добавить событие</a>
+                        <span class="btn" data-modal="notification-modal">Добавить событие</span>
                         <a href="#" class="account-link">Личный кабинет</a>
                         <span class="menu-btn"></span>
                     </div>
@@ -1158,7 +1158,7 @@
                     </span>
                 </div>
                 <div class="mobile-menu__bottom-col">
-                    <a href="#" class="btn btn_full-size">Добавить событие</a>
+                    <span class="btn btn_full-size" data-modal="notification-modal">Добавить событие</span>
                 </div>
             </div>
         </div>
@@ -2200,12 +2200,33 @@
     <div class="mobile-menu-overlay"></div>
     <!-- mobile-menu-overlay end -->
 
+    <!-- notification-modal Start -->
+    <div id="notification-modal" class="modal modal_size-small">
+        <div class="modal__content">
+            <div class="modal__in">
+                <div class="modal__top-panel">
+                    <h3 class="small-title small-title_dec-line">Уважаемые посетители!</h3>
+                    <span class="modal__close-btn">Закрыть</span>
+                </div>
+                <p>Для того чтобы добавить на сайт мероприятие, получить информацию о входном билете, войдите в кабинет или зарегистрируйтесь</p>
+                <div class="modal__bottom-col">
+                    <a href="#" class="btn btn_color-blue">Войти</a>
+                    <a href="#" class="btn btn_color-transparent">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal__overlay"></div>
+    </div>
+    <!-- notification-modal end -->
+
     <!-- countries-modal Start -->
     <div id="countries-modal" class="modal">
         <div class="modal__content">
             <div class="modal__in">
-                <span class="modal__close-btn">Закрыть</span>
-                <h3 class="title">Страны</h3>
+                <div class="modal__top-panel">
+                    <h3 class="small-title small-title_dec-line">Страны</h3>
+                    <span class="modal__close-btn">Закрыть</span>
+                </div>
                 <div class="info-nav-col info-nav-col_five-col">
                     <div class="info-nav-col__item">
                         <span class="info-nav-col__title">ТОП-10</span>

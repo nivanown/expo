@@ -1077,7 +1077,7 @@
                         </div>
                     </div>
                     <div class="header__user-col">
-                        <a href="#" class="btn">Добавить событие</a>
+                        <span class="btn" data-modal="notification-modal">Добавить событие</span>
                         <a href="#" class="account-link">Личный кабинет</a>
                         <span class="menu-btn"></span>
                     </div>
@@ -1158,7 +1158,7 @@
                     </span>
                 </div>
                 <div class="mobile-menu__bottom-col">
-                    <a href="#" class="btn btn_full-size">Добавить событие</a>
+                    <span class="btn btn_full-size" data-modal="notification-modal">Добавить событие</span>
                 </div>
             </div>
         </div>
@@ -1265,67 +1265,69 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="articles-widget">
-                            <h3 class="small-title">Другие новости</h3>
-                            <div class="news news_one-columns">
-                                <div class="news__item">
-                                    <h3 class="news__title">
-                                        <a href="#">В Алматы завершился 20-й Конвент Мир торговли</a>
-                                    </h3>
-                                    <p>С 23 по 25 октября в Алматы состоялся юбилейный 20-й Конвент Мир торговли, который стал знаковым событием для ритейл-отрасли Центральной Азии. В мероприятии приняли участие более 400 представителей бизнеса, среди которых 70% первые лица ведущих торговых сетей из Казахстана, Узбекистана, Кыргызстана, Таджикистана, Азербайджана, Грузии и Армении.</p>
-                                    <div class="news__info-col">
-                                        <span class="news__date">23 декабря 2024</span>
-                                        <i class="news__separator"></i>
-                                        <span class="news__country">Казахстан</span>
+                        <div class="widgets-col">
+                            <div class="articles-widget">
+                                <h3 class="small-title">Другие новости</h3>
+                                <div class="news news_one-columns">
+                                    <div class="news__item">
+                                        <h3 class="news__title">
+                                            <a href="#">В Алматы завершился 20-й Конвент Мир торговли</a>
+                                        </h3>
+                                        <p>С 23 по 25 октября в Алматы состоялся юбилейный 20-й Конвент Мир торговли, который стал знаковым событием для ритейл-отрасли Центральной Азии. В мероприятии приняли участие более 400 представителей бизнеса, среди которых 70% первые лица ведущих торговых сетей из Казахстана, Узбекистана, Кыргызстана, Таджикистана, Азербайджана, Грузии и Армении.</p>
+                                        <div class="news__info-col">
+                                            <span class="news__date">23 декабря 2024</span>
+                                            <i class="news__separator"></i>
+                                            <span class="news__country">Казахстан</span>
+                                        </div>
+                                    </div>
+                                    <div class="news__item">
+                                        <h3 class="news__title">
+                                            <a href="#">CISO FORUM 2025: место силы для лидеров информационной безопасности</a>
+                                        </h3>
+                                        <p>CISO FORUM — главное событие года, объединяющее лидеров информационной безопасности. Форум предлагает уникальную программу, разработанную CISO для CISO, с акцентом на реальные вызовы рынка и практические решения.</p>
+                                        <div class="news__info-col">
+                                            <span class="news__date">17 декабря 2024</span>
+                                            <i class="news__separator"></i>
+                                            <span class="news__country">Россия</span>
+                                        </div>
+                                    </div>
+                                    <div class="news__item">
+                                        <h3 class="news__title">
+                                            <a href="#">В «Экспоцентре» открылась выставка коммерческих автомобилей</a>
+                                        </h3>
+                                        <p>В «Экспоцентре» открылась международная выставка автобусов, техники для пассажирских перевозок, коммерческих автомобилей Urbantrans 2024/Comtrans International 2024, организованная компанией ООО «АйТиИМФ Экспо».</p>
+                                        <div class="news__info-col">
+                                            <span class="news__date">11 декабря 2024</span>
+                                            <i class="news__separator"></i>
+                                            <span class="news__country">Узбекистан</span>
+                                        </div>
+                                    </div>
+                                    <div class="news__item">
+                                        <h3 class="news__title">
+                                            <a href="#">Онлайн деловые встречи с китайскими компаниями — производителями медицинских инструментов и средств</a>
+                                        </h3>
+                                        <p>В Китае, в провинции Цзянсу успешно состоялась Чжэцзянская экспортная онлайн-ярмарка медицинских препаратов, изделий и оборудования. Мероприятие станет продолжением</p>
+                                        <div class="news__info-col">
+                                            <span class="news__date">11 ноября 2024</span>
+                                            <i class="news__separator"></i>
+                                            <span class="news__country">Узбекистан</span>
+                                        </div>
+                                    </div>
+                                    <div class="news__item">
+                                        <h3 class="news__title">
+                                            <a href="#">Международная конференция по деловому туризму пройдёт в Москве</a>
+                                        </h3>
+                                        <p>С 16 по 17 декабря в Москве на площадке отеля Hyatt Regency Moscow Petrovsky Park пройдёт Международная конференция по деловому туризму «Meet Global MICE Congress: BRICS Edition 2024». Мероприятие объединит представителей индустрии делового туризма: специалистов профильных ведомств и ассоциаций, организаторов событий, отельеров и других спикеров. Об этом сообщила заместитель Мэра Москвы Наталья Сергунина, слова которой приводит портал mos.ru.</p>
+                                        <div class="news__info-col">
+                                            <span class="news__date">1 ноября 2024</span>
+                                            <i class="news__separator"></i>
+                                            <span class="news__country">Россия</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="news__item">
-                                    <h3 class="news__title">
-                                        <a href="#">CISO FORUM 2025: место силы для лидеров информационной безопасности</a>
-                                    </h3>
-                                    <p>CISO FORUM — главное событие года, объединяющее лидеров информационной безопасности. Форум предлагает уникальную программу, разработанную CISO для CISO, с акцентом на реальные вызовы рынка и практические решения.</p>
-                                    <div class="news__info-col">
-                                        <span class="news__date">17 декабря 2024</span>
-                                        <i class="news__separator"></i>
-                                        <span class="news__country">Россия</span>
-                                    </div>
+                                <div class="articles-widget__btn-panel">
+                                    <a href="#" class="btn btn_color-transparent btn_full-size">Читать все новости</a>
                                 </div>
-                                <div class="news__item">
-                                    <h3 class="news__title">
-                                        <a href="#">В «Экспоцентре» открылась выставка коммерческих автомобилей</a>
-                                    </h3>
-                                    <p>В «Экспоцентре» открылась международная выставка автобусов, техники для пассажирских перевозок, коммерческих автомобилей Urbantrans 2024/Comtrans International 2024, организованная компанией ООО «АйТиИМФ Экспо».</p>
-                                    <div class="news__info-col">
-                                        <span class="news__date">11 декабря 2024</span>
-                                        <i class="news__separator"></i>
-                                        <span class="news__country">Узбекистан</span>
-                                    </div>
-                                </div>
-                                <div class="news__item">
-                                    <h3 class="news__title">
-                                        <a href="#">Онлайн деловые встречи с китайскими компаниями — производителями медицинских инструментов и средств</a>
-                                    </h3>
-                                    <p>В Китае, в провинции Цзянсу успешно состоялась Чжэцзянская экспортная онлайн-ярмарка медицинских препаратов, изделий и оборудования. Мероприятие станет продолжением</p>
-                                    <div class="news__info-col">
-                                        <span class="news__date">11 ноября 2024</span>
-                                        <i class="news__separator"></i>
-                                        <span class="news__country">Узбекистан</span>
-                                    </div>
-                                </div>
-                                <div class="news__item">
-                                    <h3 class="news__title">
-                                        <a href="#">Международная конференция по деловому туризму пройдёт в Москве</a>
-                                    </h3>
-                                    <p>С 16 по 17 декабря в Москве на площадке отеля Hyatt Regency Moscow Petrovsky Park пройдёт Международная конференция по деловому туризму «Meet Global MICE Congress: BRICS Edition 2024». Мероприятие объединит представителей индустрии делового туризма: специалистов профильных ведомств и ассоциаций, организаторов событий, отельеров и других спикеров. Об этом сообщила заместитель Мэра Москвы Наталья Сергунина, слова которой приводит портал mos.ru.</p>
-                                    <div class="news__info-col">
-                                        <span class="news__date">1 ноября 2024</span>
-                                        <i class="news__separator"></i>
-                                        <span class="news__country">Россия</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="articles-widget__btn-panel">
-                                <a href="#" class="btn btn_color-transparent btn_full-size">Читать все новости</a>
                             </div>
                         </div>
                     </div>
@@ -2024,6 +2026,25 @@
         <div class="modal__overlay"></div>
     </div>
     <!-- countries-modal end -->
+
+    <!-- notification-modal Start -->
+    <div id="notification-modal" class="modal modal_size-small">
+        <div class="modal__content">
+            <div class="modal__in">
+                <div class="modal__top-panel">
+                    <h3 class="small-title small-title_dec-line">Уважаемые посетители!</h3>
+                    <span class="modal__close-btn">Закрыть</span>
+                </div>
+                <p>Для того чтобы добавить на сайт мероприятие, получить информацию о входном билете, войдите в кабинет или зарегистрируйтесь</p>
+                <div class="modal__bottom-col">
+                    <a href="#" class="btn btn_color-blue">Войти</a>
+                    <a href="#" class="btn btn_color-transparent">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal__overlay"></div>
+    </div>
+    <!-- notification-modal end -->
 
     <!-- Plugin scripts -->
     <script src="js/swiper-bundle.min.js"></script>
