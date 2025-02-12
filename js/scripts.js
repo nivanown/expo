@@ -352,8 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputMail = document.querySelector('.input-mail');
 
     if (!inputMail) {
-        console.warn('Элемент с классом "input-mail" не найден на странице.');
-    return;
+        return;
     }
 
     inputMail.addEventListener('input', () => {
@@ -526,6 +525,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         showMoreBtn.classList.remove("hidden");
         hideBtn.classList.remove("show");
+    });
+});
+
+/*- password-field -*/
+document.addEventListener("DOMContentLoaded", function () {
+    const passwordFields = document.querySelectorAll(".password-field");
+    
+    if (passwordFields.length === 0) return;
+    
+    passwordFields.forEach(field => {
+        const input = field.querySelector("input");
+        const btn = field.querySelector(".password-field__btn");
+        
+        if (!input || !btn) return;
+        
+        btn.addEventListener("click", function () {
+            const isPassword = input.type === "password";
+            input.type = isPassword ? "text" : "password";
+            field.classList.toggle("show", isPassword);
+        });
     });
 });
 

@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const eventsList = document.querySelectorAll(".events-list");
 
     if (!prevArrow || !nextArrow || !monthDisplay || !daysContainer || !eventsList.length) {
-        console.warn("Не удалось найти некоторые элементы календаря. Проверьте структуру HTML.");
         return;
     }
 
