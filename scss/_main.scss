@@ -2349,3 +2349,55 @@
   	gap: 0 16px;
   	}
 	}
+
+/* authentication */
+.authentication {
+	margin: 0 auto;
+	max-width: 780px;
+	.big-title {
+		margin: 0 0 0;
+		}
+	p {
+		margin: 0 0 40px;
+		}
+	&__bottom-panel {
+		padding: 20px 0 0;
+		border-top: 3px solid var(--primary-border-color);
+		}
+	&__action {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 0 10px;
+		font-size: 15px;
+		line-height: 22px;
+		}
+	}
+
+/* authentication-form */
+.authentication-form {
+	margin: 0 0 20px;
+	&__in {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px 20px;
+		}
+	.pos-right {
+		grid-column: 2 / 2;
+		}
+	.full-size {
+		grid-column: 3 / 1;
+		}
+	&__col {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0 20px;
+		}
+	&__link {
+		display: block;
+		margin: 8px 0 0;
+		font-size: 15px;
+		line-height: 22px;
+		}
+	}
